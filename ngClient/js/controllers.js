@@ -1,7 +1,11 @@
-myApp.controller("HeaderCtrl", ['$scope', '$location',
-  function($scope, $location) {
+myApp.controller("HeaderCtrl", ['$scope', '$location', 'UserAuthFactory',
+  function($scope, $location,UserAuthFactory) {
     $scope.isActive = function(route) {
       return route === $location.path();
+    }
+    
+    $scope.logout = function () {
+        UserAuthFactory.logout();
     }
   }
 ]);
@@ -26,15 +30,12 @@ myApp.controller("Page2Ctrl", ['$scope',
   }
 ]);
 
-myApp.controller("Page3Ctrl", ['$scope', 'todosFactory',
-  function($scope, todosFactory) {
-    $scope.name = "Page3 Controller";
-    $scope.todos = [];
-
-    // Access the factory and get the latest Todos list
-    todosFactory.getTodos().then(function(data) {
-      $scope.todos = data.data;
-    });
-
-  }
+myApp.controller("Page3Ctrl", ['$scope', 'dataFactory',
+    function($scope, dataFactory) {
+      $scope.products = [];
+      
+      dataFactory.getProducts().then(function(data) {
+          $scope.products = data.data;
+      });
+    }
 ]);

@@ -1,7 +1,7 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="HeaderCtrl">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" ng-show="showMenu">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -17,6 +17,8 @@
         <li ng-class="{active:isActive('/page2')}"><a ng-href="#/page2">Page 2 (Sample Filter)</a>
         </li>
         <li ng-class="{active:isActive('/page3')}"><a ng-href="#/page3">Page 3 (Sample Factory)</a>
+        </li>
+        <li><a href="javascript:" ng-click="logout()">Logout</a>
         </li>
       </ul>
     </div>
