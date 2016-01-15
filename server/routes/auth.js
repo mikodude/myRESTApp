@@ -42,7 +42,7 @@ var auth = {
     validateUser: function(username) {
                 var dbUserObj = {
             name: 'mikey',
-            role: 'admin',
+            role: 'user',
             username: 'meastaff@gmail.com'
         };
         

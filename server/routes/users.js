@@ -40,3 +40,5 @@ var data = [{
     name: 'user 3',
     id: '3'
 }]
+
+module.exports = users;
