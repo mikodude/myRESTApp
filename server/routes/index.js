@@ -1,4 +1,4 @@
-var experss = require('express');
+var express = require('express');
 var router = express.Router();
 
 var auth = require('./auth.js');
@@ -18,3 +18,5 @@ router.get('/api/v1/admin/user/:id', products.getOne);
 router.post('/api/v1/admin/user/', products.create);
 router.put('/api/v1/admin/user/:id', products.update);
 router.delete('/api/v1/admin/user/:id', products.delete);
+
+module.exports = router;
